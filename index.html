@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Game</title>
+    <style>
+        body {
+            background-color: black;
+            align-content: center;
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+            background-color: black;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            color: pink;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+        }
+        #message {
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+           color: coral;
+        }
+    </style>
+</head>
+<body>
+   <h1>Click Me for surprise! 😜</h1> 
+   <button id="changeColorBtn">click Me</button>
+   <p id="message">Click to reveal Message! 🤭</p>
+<script>
+        let colors = ["red", "blue", "green", "yellow"];
+        document.getElementById("changeColorBtn").addEventListener("click", function() {
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            this.style.backgroundColor = randomColor;
+      document.getElementById("message").textContent = "You clicked for a surprise? Well, surprise!";
+             setTimeout(function() {
+           document.getElementById("message").textContent = "🎉 April Fool! 🤪 You got tricked!";
+        }, 2000);
+    });
+
+
+</script>
+   
+</body>
+</html>
